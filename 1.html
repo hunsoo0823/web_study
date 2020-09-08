@@ -7,13 +7,42 @@
 </head>
 <body>
   <h1> <a href="index.html">BLIZZARD NEWS</a></h1>
+  <!--
   <input type="button" value="night" onclick="
     document.querySelector('body').style.backgroundColor='black';
     document.querySelector('body').style.color='white';
   ">
-  <input type="button" value="white" onclick="
+  <input type="button" value="day" onclick="
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
+  ">
+  -->
+  
+  <input type="button" value="night" onclick="
+  var target = document.querySelector('body');
+  if(this.value === 'night'){
+    target.style.backgroundColor='black';
+    target.style.color='white';
+    this.value = 'day';
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      console.log(alist[i]);
+      alist[i].style.color = 'powderblue';
+      i = i+1;
+    }
+  } else {
+    target.style.backgroundColor='white';
+    target.style.color='black';
+    this.value = 'night';
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      console.log(alist[i]);
+      alist[i].style.color = 'blue';
+      i = i+1;
+    }
+  }
   ">
   
   <div id="grid">
@@ -50,7 +79,7 @@
       The repeatable quests “Irondeep Supplies,” “Coldtooth Supplies,” and “More Armor Scraps” no longer reward Timewarped badges.
       Many quests in Korrak's Revenge now are daily quests and reset daily. They are as follows: “Irondeep Supplies,” “Coldtooth Supplies,” “Towers and Bunkers,” “Capture a Mine,” “The Graveyards of Alterac,” “Armor Scraps,” “Capture a Mine,” and “Alterac Valley Graveyards.”
       Developers’ note: While acquiring supplies from the mines and mounts for the ram and wolf riders contributes to the battle, we agree with the feedback that these can be a bit repetitive. To that end, we have converted a number of quests within the Battleground into dailies and removed the reward for the repeatable turn-ins.
-      WoW Classic</p>x
+      WoW Classic</p>
       <img src="goblin.jpg" width="100%"> 
       <p>The guards in Gadgetzan, Booty Bay, and Everlook now have a significantly longer range on their ranged attacks.
       Developers’ note: We’re seeing some players attack others by abusing line-of-sight rules in Gadgetzan. This disruption is against our Terms of Service (as it was in 2006) and we’re taking action against players who exploit this game mechanic. While this new range differs slightly from orginal WoW 1.12, it better enforces the authentically intended consequence of PvPing in a goblin city by challenging the attacker to fight, die, or escape the guards.
